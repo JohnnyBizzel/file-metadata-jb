@@ -15,7 +15,7 @@ app.get('/', function(req, res){
 
 var storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, './uploads'); // Absolute path. Folder must exist, will not be created for you.
+    cb(null, './uploads/'); // Absolute path. Folder must exist, will not be created for you.
   },
   filename: function (req, file, cb) {
     cb(null, 'tempfile');
@@ -24,19 +24,19 @@ var storage = multer.diskStorage({
 
 var upload =multer({ storage: storage });
 
-app.post('/', [ upload.single("upfile") , function(req, res){
+app.post('/', upload.single("upfile") , function(req, res){
 
     var rtObj = { "size-in-bytes" : req.file.size };
     
     // immediately delete the file
-    // fs.unlink('./uploads/tempfile',function(err){
-    //      if(err) return console.log("fs unlink" + err);
-    //      console.log('file deleted successfully');
-    // });  
+    fs.unlink('./uploads/tempfile',function(err){
+         if(err) return console.log("fs unlink" + err);
+         console.log('file deleted successfully');
+    });  
     
     res.end(JSON.stringify(rtObj));
     res.status(204).end()
-}]);
+});
 
 app.use(function(req, res){
   res.type('text/html');

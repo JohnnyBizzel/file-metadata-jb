@@ -1,0 +1,32 @@
+{
+  "name": "file-metadata-jb",
+  "version": "1.0.0",
+  "description": "FCC File metadata service",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JohnnyBizzel/file-metadata-jb.git"
+  },
+  "keywords": [
+    "files",
+    "bytes",
+    "metadata",
+    "upload"
+  ],
+  "author": "John Barber",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JohnnyBizzel/file-metadata-jb/issues"
+  },
+  "homepage": "https://github.com/JohnnyBizzel/file-metadata-jb#readme",
+  "dependencies": {
+    "express": "^4.14.0",
+    "express-handlebars": "^3.0.0",
+    "fs": "0.0.1-security",
+    "handlebars": "^4.0.6",
+    "multer": "^1.3.0"
+  }
+}

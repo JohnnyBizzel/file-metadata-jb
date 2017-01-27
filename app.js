@@ -30,7 +30,7 @@ app.post('/', [ upload.single("upfile") , function(req, res){
     
     // immediately delete the file
     fs.unlink('./uploads/tempfile',function(err){
-         if(err) return console.log(err);
+         if(err) return console.log("fs unlink" + err);
          console.log('file deleted successfully');
     });  
     
@@ -45,7 +45,7 @@ app.use(function(req, res){
 });
 
 app.use(function(err, req, res, next){
-  console.error(err.stack);
+  console.error("error stack" + err.stack);
   res.status(500);
   res.render('500');
 });

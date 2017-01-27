@@ -29,10 +29,10 @@ app.post('/', [ upload.single("upfile") , function(req, res){
     var rtObj = { "size-in-bytes" : req.file.size };
     
     // immediately delete the file
-    fs.unlink('./uploads/tempfile',function(err){
-         if(err) return console.log("fs unlink" + err);
-         console.log('file deleted successfully');
-    });  
+    // fs.unlink('./uploads/tempfile',function(err){
+    //      if(err) return console.log("fs unlink" + err);
+    //      console.log('file deleted successfully');
+    // });  
     
     res.end(JSON.stringify(rtObj));
     res.status(204).end()

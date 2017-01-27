@@ -34,8 +34,8 @@ app.post('/', upload.single("upfile") , function(req, res){
          console.log('file deleted successfully');
     });  
     
-    res.end(JSON.stringify(rtObj));
-    res.status(204).end()
+    res.send(rtObj);
+    
 });
 
 app.use(function(req, res){
